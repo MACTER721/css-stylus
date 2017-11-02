@@ -21,7 +21,7 @@ var config = {
     chunkModules: false
   },
   entry: {
-    styles: path.join(src, 'styles.styl'),
+/*    styles: path.join(src, 'styles.styl'),*/
     index: path.join(src, 'index.pug'),
     bundle: path.join(src, 'bundle.js')
   },
@@ -40,13 +40,13 @@ var config = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },*/
-      {
+     /* {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-      },
+      },*/
       {
-      test: /\.stly$/, 
-      loader: ExtractTextPlugin.extract("style", "css!stylus")
+      test: /\.styl$/, 
+      loader: ExtractTextPlugin.extract("css-loader!stylus-loader")
       },
       {
     		test: /\.js$/,
